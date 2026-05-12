@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment files - NEVER commit these
+.env
+**/.env
+.env.local
+.env.production
+.env.*.local
+
+# Build output
+dist/
+build/
+**/dist/
+**/build/
+
+# Uploads (now on Cloudinary)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp

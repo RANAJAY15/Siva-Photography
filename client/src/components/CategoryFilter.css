@@ -1,0 +1,24 @@
+.cat-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.cat-btn {
+  padding: 0.45rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.cat-btn:hover { border-color: var(--border-accent); color: var(--text-primary); }
+.cat-btn.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #0a0a0f;
+  border-color: var(--accent);
+  font-weight: 600;
+}

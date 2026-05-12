@@ -1,0 +1,74 @@
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.25rem 0;
+  transition: var(--transition);
+}
+.navbar.scrolled {
+  background: rgba(10,10,15,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.85rem 0;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+.logo-icon { color: var(--accent); font-size: 1.2rem; }
+.nav-links {
+  display: flex; align-items: center; gap: 2rem;
+}
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition);
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 2px; background: var(--accent);
+  transform: scaleX(0); transition: transform var(--transition);
+}
+.nav-link:hover, .nav-link.active { color: var(--text-primary); }
+.nav-link.active::after, .nav-link:hover::after { transform: scaleX(1); }
+.nav-cta { padding: 0.5rem 1.25rem !important; font-size: 0.85rem !important; }
+
+/* User info in navbar */
+.nav-user { display: flex; align-items: center; gap: 0.6rem; }
+.nav-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.9rem; border: 2px solid;
+}
+.nav-avatar.admin { background: rgba(201,169,110,0.2); color: var(--accent); border-color: var(--accent); }
+.nav-avatar.user  { background: rgba(100,180,100,0.15); color: #7ec87e; border-color: #7ec87e; }
+.nav-user-info { display: flex; flex-direction: column; }
+.nav-user-name { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); line-height: 1.2; }
+.nav-user-role { font-size: 0.7rem; }
+.nav-user-role.admin { color: var(--accent); }
+.nav-user-role.user  { color: #7ec87e; }
+.logout-btn { padding: 0.4rem 0.9rem !important; font-size: 0.8rem !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: var(--transition); }
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    position: fixed; top: 0; right: -100%; bottom: 0;
+    width: 260px; flex-direction: column; justify-content: center;
+    background: var(--bg-secondary); border-left: 1px solid var(--border);
+    transition: right var(--transition); padding: 2rem;
+  }
+  .nav-links.open { right: 0; }
+}

@@ -1,0 +1,125 @@
+.admin-login-page {
+  min-height: 100vh;
+  display: flex; align-items: stretch;
+  position: relative; overflow: hidden;
+}
+.admin-login-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.al-orb {
+  position: absolute; border-radius: 50%;
+  filter: blur(100px); pointer-events: none;
+}
+.al-orb1 { width: 600px; height: 600px; background: rgba(201,169,110,0.1); top: -20%; left: -15%; }
+.al-orb2 { width: 500px; height: 500px; background: rgba(80,60,180,0.08); bottom: -20%; right: -10%; }
+.al-orb3 { width: 350px; height: 350px; background: rgba(224,82,82,0.05); top: 30%; right: 35%; }
+.al-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.admin-login-wrap {
+  position: relative; z-index: 1;
+  display: flex; width: 100%; min-height: 100vh;
+}
+
+/* Left */
+.admin-login-left {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(201,169,110,0.06) 0%, rgba(10,10,15,0) 100%);
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  padding: 2.5rem 3rem;
+}
+.al-brand {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: auto;
+}
+.al-brand-icon { font-size: 2rem; color: var(--accent); line-height: 1; }
+.al-brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 700; color: var(--text-primary);
+}
+.al-brand-sub {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--accent);
+}
+.al-headline-wrap { margin: auto 0; padding: 2rem 0; }
+.al-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.1; margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+.al-headline span { color: var(--accent); }
+.al-sub {
+  color: var(--text-secondary); font-size: 1rem; line-height: 1.7;
+  max-width: 380px; margin-bottom: 2rem;
+}
+.al-features { display: flex; flex-direction: column; gap: 0.7rem; }
+.al-feat {
+  display: flex; align-items: center; gap: 0.6rem;
+  color: var(--text-secondary); font-size: 0.9rem;
+}
+.al-feat span { color: var(--accent); font-size: 0.7rem; }
+
+/* Right */
+.admin-login-right {
+  width: 500px; min-width: 500px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem;
+  background: rgba(8,8,16,0.7);
+}
+.al-form-box {
+  width: 100%; padding: 2.5rem 2.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+.al-form-header { margin-bottom: 2rem; }
+.al-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.3rem 0.9rem; border-radius: 50px;
+  background: var(--accent-dim); color: var(--accent);
+  border: 1px solid var(--border-accent);
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 1rem;
+}
+.al-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 0.4rem;
+}
+.al-form-sub { color: var(--text-muted); font-size: 0.88rem; }
+
+.al-form { display: flex; flex-direction: column; gap: 0; }
+.pass-wrap { position: relative; }
+.pass-wrap input { padding-right: 3rem; }
+.pass-toggle {
+  position: absolute; right: 0.8rem; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer; font-size: 1rem; opacity: 0.6;
+}
+.pass-toggle:hover { opacity: 1; }
+
+.al-submit {
+  width: 100%; padding: 0.9rem !important;
+  font-size: 0.95rem !important; margin-top: 0.5rem;
+  border-radius: var(--radius) !important;
+}
+.al-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,169,110,0.35); }
+.al-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.al-notice {
+  text-align: center; margin-top: 1.5rem;
+  font-size: 0.8rem; color: var(--text-muted);
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .admin-login-left { display: none; }
+  .admin-login-right { width: 100%; min-width: unset; }
+}

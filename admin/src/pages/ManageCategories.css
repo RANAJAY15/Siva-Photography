@@ -1,0 +1,57 @@
+/* Add card */
+.mc-add-card {
+  margin-bottom: 1.75rem;
+}
+.mc-add-title {
+  font-size: 0.9rem; font-weight: 700; color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.mc-add-form {
+  display: flex; gap: 0.75rem; flex-wrap: wrap;
+}
+.mc-add-input {
+  flex: 1; min-width: 200px;
+  padding: 0.7rem 1rem;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  border-radius: var(--radius); color: var(--text-primary);
+  font-family: 'Inter', sans-serif; font-size: 0.9rem;
+  outline: none; transition: var(--transition);
+}
+.mc-add-input:focus {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+.mc-add-input::placeholder { color: var(--text-muted); }
+
+/* List */
+.mc-list {
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.mc-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+}
+.mc-item:hover {
+  border-color: var(--border-accent);
+  background: rgba(201,169,110,0.03);
+}
+.mc-item-left {
+  display: flex; align-items: center; gap: 1rem;
+}
+.mc-item-num {
+  font-size: 0.72rem; font-weight: 700; color: var(--text-muted);
+  font-family: 'Playfair Display', serif;
+  min-width: 24px;
+}
+.mc-item-name {
+  font-size: 0.95rem; font-weight: 500; color: var(--text-primary);
+}
+.mc-delete {
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.mc-item:hover .mc-delete { opacity: 1; }
