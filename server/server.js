@@ -15,14 +15,18 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
-  process.env.CLIENT_URL,   // e.g. https://sivas-photography.vercel.app
-  process.env.ADMIN_URL,    // e.g. https://sivas-admin.vercel.app
+  process.env.CLIENT_URL,   // e.g. https://siva-photography-zeta.vercel.app
+  process.env.ADMIN_URL,    // e.g. https://siva-photography-admin.vercel.app
 ].filter(Boolean);
 
 app.use(cors({
   origin: (origin, cb) => {
     // allow requests with no origin (curl, Postman, same-origin)
-    if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
+    if (!origin) return cb(null, true);
+    // allow any vercel.app subdomain (covers all preview + production deployments)
+    if (origin.endsWith('.vercel.app')) return cb(null, true);
+    // allow explicitly listed origins
+    if (allowedOrigins.includes(origin)) return cb(null, true);
     cb(new Error(`CORS blocked: ${origin}`));
   },
   credentials: true,
